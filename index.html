@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akaris - Bespoke Lifestyle Collections</title>
-<meta name="description" content="Akaris creates handcrafted, custom-designed lifestyle pieces for spaces that refuse the ordinary.">
+<title>Akaris - Bespoke Lifestyle Collections | Custom Decor Hyderabad</title>
+<meta name="description" content="Akaris creates handcrafted, custom-designed lifestyle pieces for spaces that refuse the ordinary. Sci-fi art, moto décor, planters and more. Based in Hyderabad, India.">
+<meta name="keywords" content="custom decor Hyderabad, bespoke lifestyle products, 3D printed decor India, custom wall art Hyderabad, cafe decor India, Star Wars decor, moto culture decor">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Akaris — Bespoke Lifestyle Collections">
+<meta property="og:description" content="Handcrafted, custom-designed pieces for spaces that refuse the ordinary.">
+<meta property="og:url" content="https://akaris.in">
+<meta property="og:type" content="website">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -18,25 +24,14 @@ body{background:var(--black);color:var(--white);font-family:Georgia,serif;line-h
 canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .site{position:relative;z-index:1}
 
-/* AKARIS LOGO GLOW */
-.ak{
-  font-family:Georgia,serif;
-  color:var(--gold);
-  text-shadow:0 0 12px rgba(201,137,42,0.7),0 0 24px rgba(201,137,42,0.35),0 0 48px rgba(201,137,42,0.15);
-  letter-spacing:0.4em;
-  text-transform:uppercase;
-  font-weight:400;
-  display:inline-block;
-}
-.ak-anim{
-  display:inline-block;
-  animation:akglow 3s ease-in-out infinite;
-}
+.ak{font-family:Georgia,serif;color:var(--gold);text-shadow:0 0 12px rgba(201,137,42,0.7),0 0 24px rgba(201,137,42,0.35),0 0 48px rgba(201,137,42,0.15);letter-spacing:0.4em;text-transform:uppercase;font-weight:400;display:inline-block}
+.ak-anim{animation:akglow 3s ease-in-out infinite}
 @keyframes akglow{
   0%,100%{text-shadow:0 0 10px rgba(201,137,42,0.6),0 0 20px rgba(201,137,42,0.3),0 0 40px rgba(201,137,42,0.12)}
   50%{text-shadow:0 0 18px rgba(232,169,74,0.95),0 0 36px rgba(201,137,42,0.6),0 0 72px rgba(201,137,42,0.3),0 0 120px rgba(201,137,42,0.1)}
 }
 
+/* NAV */
 nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;background:rgba(10,10,10,0.93);z-index:100;backdrop-filter:blur(10px)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:1.1rem var(--pad-x);display:flex;justify-content:space-between;align-items:center}
 .logo{text-decoration:none;line-height:1}
@@ -47,6 +42,18 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .nav-links a:hover{color:var(--gold)}
 .nav-links a:hover::after{width:100%}
 
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,10,10,0.97);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--white-dim);text-decoration:none;font-size:1.2rem;letter-spacing:0.2em;text-transform:uppercase;font-family:Arial,sans-serif;transition:color 0.2s}
+.mobile-menu a:hover{color:var(--gold)}
+
+/* HERO */
 .hero{padding:clamp(5rem,12vw,9rem) var(--pad-x) clamp(4rem,8vw,7rem);max-width:var(--max-w);margin:0 auto;text-align:center}
 .hero-tag{display:inline-block;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.3);padding:6px 18px;margin-bottom:2.5rem;font-family:Arial,sans-serif}
 .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:400;line-height:1.05;color:var(--white);margin-bottom:1.5rem;letter-spacing:-0.02em}
@@ -58,6 +65,7 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .btn-ghost:hover{background:var(--gold);color:#0a0a0a}
 
+/* SECTIONS */
 .section-wrap{border-top:1px solid rgba(201,137,42,0.08);padding:clamp(4rem,8vw,6rem) 0}
 .section-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
 .section-header{text-align:center;margin-bottom:3.5rem}
@@ -65,6 +73,16 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .s-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:400;color:var(--white);margin-bottom:0.75rem}
 .s-sub{color:var(--white-dim);font-size:0.87rem;font-family:Arial,sans-serif;line-height:1.85;max-width:54ch;margin:0 auto}
 
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,137,42,0.06);margin-top:3rem}
+.how-card{background:var(--dark);padding:2.5rem 2rem;position:relative}
+.how-num{font-size:3rem;font-weight:400;color:rgba(201,137,42,0.08);font-family:Georgia,serif;line-height:1;margin-bottom:1.25rem;display:block}
+.how-title{font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.75rem;letter-spacing:0.03em}
+.how-desc{font-size:0.82rem;color:var(--grey-text);font-family:Arial,sans-serif;line-height:1.8}
+.how-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.how-card:hover::before{transform:scaleX(1)}
+
+/* COLLECTIONS GRID */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,137,42,0.06)}
 .card{background:var(--dark);overflow:hidden;transition:background 0.3s;position:relative}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;z-index:2}
@@ -80,6 +98,7 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .tag{font-size:0.57rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.2);padding:2px 7px;font-family:Arial,sans-serif;opacity:0.8}
 .card-custom{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.5rem;text-align:center;background:#0d0d0d;min-height:340px;border:1px solid rgba(201,137,42,0.08)}
 
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(3rem,6vw,7rem);align-items:center}
 .about-eyebrow{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-family:Arial,sans-serif;display:block;opacity:0.8}
 .about-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--white);line-height:1.2;margin-bottom:1.5rem}
@@ -93,34 +112,72 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .about-right p:last-child{margin-bottom:0}
 .about-right .pull{font-family:Georgia,serif;font-size:1.05rem;color:var(--white);font-style:italic;line-height:1.7;border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0}
 
+/* CONTACT FORM */
 .contact-section{text-align:center}
-.contact-cards{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
-.contact-a{display:flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border:1px solid rgba(201,137,42,0.2);color:var(--white);text-decoration:none;font-size:0.8rem;font-family:Arial,sans-serif;transition:all 0.2s}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;text-align:left}
+.contact-info h3{font-size:1rem;font-weight:400;color:var(--white);margin-bottom:1rem;letter-spacing:0.03em}
+.contact-info p{font-size:0.85rem;color:var(--white-dim);font-family:Arial,sans-serif;line-height:1.8;margin-bottom:1.5rem}
+.contact-links{display:flex;flex-direction:column;gap:0.75rem}
+.contact-a{display:flex;align-items:center;gap:0.75rem;padding:0.9rem 1.25rem;border:1px solid rgba(201,137,42,0.2);color:var(--white);text-decoration:none;font-size:0.78rem;font-family:Arial,sans-serif;transition:all 0.2s}
 .contact-a:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,137,42,0.04)}
 .contact-a svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-field{display:flex;flex-direction:column;gap:0.4rem}
+.form-field label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-family:Arial,sans-serif;opacity:0.8}
+.form-field input,.form-field textarea,.form-field select{background:#111;border:1px solid rgba(201,137,42,0.15);color:var(--white);font-family:Arial,sans-serif;font-size:0.82rem;padding:0.75rem 1rem;outline:none;transition:border-color 0.2s;width:100%;resize:none}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:rgba(201,137,42,0.5)}
+.form-field select option{background:#111}
+.form-field textarea{height:120px}
+.form-submit{padding:0.85rem 2rem;background:var(--gold);color:#0a0a0a;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border:none;cursor:pointer;font-family:Arial,sans-serif;font-weight:700;transition:background 0.2s;align-self:flex-start}
+.form-submit:hover{background:var(--gold-light)}
+.form-success{display:none;padding:1rem;border:1px solid rgba(201,137,42,0.3);color:var(--gold);font-size:0.82rem;font-family:Arial,sans-serif;text-align:center;letter-spacing:0.05em}
 
+/* FOOTER */
 footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .footer-copy{font-size:0.7rem;color:#3a3a3a;font-family:Arial,sans-serif;text-align:right}
 .footer-copy span{display:block;color:rgba(201,137,42,0.25);font-size:0.58rem;letter-spacing:0.15em;margin-top:3px}
 
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 0 0 0 rgba(201,137,42,0.4);animation:wapulse 2.5s ease-in-out infinite}
+.wa-float svg{width:24px;height:24px;fill:none;stroke:#0a0a0a;stroke-width:2;flex-shrink:0}
+.wa-float:hover{background:var(--gold-light)}
+@keyframes wapulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,137,42,0.4)}
+  50%{box-shadow:0 0 0 10px rgba(201,137,42,0)}
+}
+
+/* RESPONSIVE */
 @media(max-width:900px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about-grid{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .nav-links{display:none}
+  .hamburger{display:flex}
   .grid{grid-template-columns:1fr}
   .btns{flex-direction:column;align-items:center}
   .footer-inner{flex-direction:column;gap:1rem;text-align:center}
   .footer-copy{text-align:center}
-  .contact-cards{flex-direction:column;align-items:stretch}
+  .form-row{grid-template-columns:1fr}
   .stat-row{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <canvas id="bg"></canvas>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#collections" onclick="closeMenu()">Collections</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#howitworks" onclick="closeMenu()">How it works</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
 <div class="site">
 
 <nav>
@@ -129,8 +186,12 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
     <ul class="nav-links">
       <li><a href="#collections">Collections</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#howitworks">How it works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -144,6 +205,33 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
   </div>
 </div>
 
+<div class="section-wrap" id="howitworks">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="s-label">The process</span>
+      <h2 class="s-title">How it works</h2>
+      <p class="s-sub">Three steps from idea to object. No guesswork, no surprises.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <span class="how-num">01</span>
+        <h3 class="how-title">Consult</h3>
+        <p class="how-desc">Tell us about your space, your taste, your brief — or just a feeling. We listen, ask the right questions, and define exactly what needs to be made.</p>
+      </div>
+      <div class="how-card">
+        <span class="how-num">02</span>
+        <h3 class="how-title">Design</h3>
+        <p class="how-desc">We develop the design with you, iterating until it's exactly right. You see it before it exists. Nothing goes into production without your approval.</p>
+      </div>
+      <div class="how-card">
+        <span class="how-num">03</span>
+        <h3 class="how-title">Deliver</h3>
+        <p class="how-desc">Your piece is crafted with precision and delivered ready to display. Built once, built right — a singular object that belongs to your space alone.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section-wrap" id="collections">
   <div class="section-inner">
     <div class="section-header">
@@ -152,7 +240,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
       <p class="s-sub">Five distinct collections rooted in culture. Every piece made-to-order, never off the shelf.</p>
     </div>
     <div class="grid">
-
       <div class="card">
         <img class="card-img" src="/img6.jpg" alt="Sci-fi wall art" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
         <div class="card-body">
@@ -162,7 +249,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
           <div class="tags"><span class="tag">Star Wars</span><span class="tag">Wall art</span><span class="tag">Figures</span></div>
         </div>
       </div>
-
       <div class="card">
         <img class="card-img" src="/img5.jpg" alt="Comic universe" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
         <div class="card-body">
@@ -172,7 +258,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
           <div class="tags"><span class="tag">Marvel</span><span class="tag">DC</span><span class="tag">Café décor</span></div>
         </div>
       </div>
-
       <div class="card">
         <img class="card-img" src="/img3.jpg" alt="Ambient lighting" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
         <div class="card-body">
@@ -182,7 +267,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
           <div class="tags"><span class="tag">Lanterns</span><span class="tag">Desk lamps</span><span class="tag">Mood</span></div>
         </div>
       </div>
-
       <div class="card">
         <img class="card-img" src="/img4.jpg" alt="Moto culture" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
         <div class="card-body">
@@ -192,7 +276,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
           <div class="tags"><span class="tag">Biker café</span><span class="tag">Piston lamps</span><span class="tag">Helmet art</span></div>
         </div>
       </div>
-
       <div class="card">
         <img class="card-img" src="/img8.jpg" alt="Smart botanicals" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
         <div class="card-body">
@@ -202,14 +285,12 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
           <div class="tags"><span class="tag">Wall planters</span><span class="tag">Sculpted pots</span><span class="tag">Outdoor</span></div>
         </div>
       </div>
-
       <div class="card card-custom">
         <p class="card-num" style="margin-bottom:1rem;opacity:1">Collection 06</p>
         <h3 class="card-title" style="font-size:1rem;margin-bottom:0.75rem">Fully custom</h3>
         <p class="card-desc" style="margin-bottom:1.5rem">Your vision, our craft. We sit with you, understand the brief and deliver something singular.</p>
         <a class="btn" href="#contact" style="font-size:0.65rem;padding:0.7rem 1.5rem">Start a brief</a>
       </div>
-
     </div>
   </div>
 </div>
@@ -239,19 +320,57 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 
 <div class="section-wrap" id="contact" style="border-bottom:none">
   <div class="section-inner">
-    <div class="contact-section">
+    <div class="section-header">
       <span class="s-label">Get in touch</span>
       <h2 class="s-title">Start a conversation</h2>
       <p class="s-sub">Tell us about your space, your idea, or what you are drawn to. We will take it from there.</p>
-      <div class="contact-cards">
-        <a class="contact-a" href="mailto:salesandsupport@akaris.in">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          salesandsupport@akaris.in
-        </a>
-        <a class="contact-a" href="https://wa.me/917386223647" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          WhatsApp us
-        </a>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Reach us directly</h3>
+        <p>Whether you have a precise brief or just a vague feeling — get in touch. We respond to every enquiry personally.</p>
+        <div class="contact-links">
+          <a class="contact-a" href="mailto:salesandsupport@akaris.in">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            salesandsupport@akaris.in
+          </a>
+          <a class="contact-a" href="https://wa.me/917386223647" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            WhatsApp us
+          </a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Your name</label>
+              <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-field">
+              <label>Email or WhatsApp</label>
+              <input type="text" placeholder="How to reach you" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>What are you looking for?</label>
+            <select>
+              <option value="">Select a collection</option>
+              <option>Sci-fi &amp; fantasy</option>
+              <option>Comic universe</option>
+              <option>Ambient lighting</option>
+              <option>Moto culture</option>
+              <option>Smart botanicals</option>
+              <option>Fully custom</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Tell us about your space or idea</label>
+            <textarea placeholder="Describe your vision, space, or brief..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send enquiry</button>
+          <div class="form-success" id="formSuccess">Thank you — we will be in touch shortly.</div>
+        </form>
       </div>
     </div>
   </div>
@@ -260,74 +379,76 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 <footer>
   <div class="footer-inner">
     <span class="ak ak-anim" style="font-size:1rem">Akaris</span>
-    <div class="footer-copy">&copy; 2026 <span class="ak" style="font-size:inherit;letter-spacing:0.15em;font-size:0.7rem">Akaris</span><span>akaris.in</span></div>
+    <div class="footer-copy">
+      &copy; 2026 <span class="ak" style="font-size:0.7rem;letter-spacing:0.15em">Akaris</span>
+      <span>akaris.in</span>
+    </div>
   </div>
 </footer>
 </div>
 
+<!-- WHATSAPP FLOAT BUTTON -->
+<a class="wa-float" href="https://wa.me/917386223647" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+</a>
+
 <script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.form-submit');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  setTimeout(()=>{
+    e.target.reset();
+    btn.textContent='Send enquiry';
+    btn.disabled=false;
+    const s=document.getElementById('formSuccess');
+    s.style.display='block';
+    setTimeout(()=>{s.style.display='none';},5000);
+  },1000);
+}
+
 const canvas=document.getElementById('bg');
 const ctx=canvas.getContext('2d');
 let W,H,streams=[],sparks=[],scanY=0;
-
-function resize(){
-  W=canvas.width=window.innerWidth;
-  H=canvas.height=window.innerHeight;
-}
-
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
 function init(){
   streams=[];sparks=[];
   for(let i=0;i<Math.floor(W/40);i++){
-    streams.push({
-      x:Math.random()*W,y:Math.random()*H,
-      len:60+Math.random()*180,
-      speed:0.6+Math.random()*2,
-      op:0.25+Math.random()*0.45,
-      w:Math.random()>0.6?1.5:0.6,
-      gold:Math.random()>0.75
-    });
+    streams.push({x:Math.random()*W,y:Math.random()*H,len:60+Math.random()*180,speed:0.6+Math.random()*2,op:0.25+Math.random()*0.45,w:Math.random()>0.6?1.5:0.6,gold:Math.random()>0.75});
   }
   for(let i=0;i<Math.floor(W/18);i++){
-    sparks.push({
-      x:Math.random()*W,y:Math.random()*H,
-      r:0.8+Math.random()*2,
-      speed:0.2+Math.random()*0.8,
-      op:0.3+Math.random()*0.5,
-      pulse:Math.random()*Math.PI*2,
-      gold:Math.random()>0.6
-    });
+    sparks.push({x:Math.random()*W,y:Math.random()*H,r:0.8+Math.random()*2,speed:0.2+Math.random()*0.8,op:0.3+Math.random()*0.5,pulse:Math.random()*Math.PI*2,gold:Math.random()>0.6});
   }
 }
-
 function draw(){
   ctx.fillStyle='rgba(10,10,10,0.18)';
   ctx.fillRect(0,0,W,H);
   ctx.strokeStyle='rgba(80,80,80,0.08)';
   ctx.lineWidth=0.5;
-  const gx=Math.floor(W/60);
-  const gy=Math.floor(H/60);
+  const gx=Math.floor(W/60);const gy=Math.floor(H/60);
   for(let i=0;i<=gx;i++){const px=(i/gx)*W;ctx.beginPath();ctx.moveTo(px,0);ctx.lineTo(px,H);ctx.stroke();}
   for(let j=0;j<=gy;j++){const py=(j/gy)*H;ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W,py);ctx.stroke();}
-  scanY+=0.8;
-  if(scanY>H)scanY=0;
-  ctx.strokeStyle='rgba(201,137,42,0.06)';
-  ctx.lineWidth=1;
+  scanY+=0.8;if(scanY>H)scanY=0;
+  ctx.strokeStyle='rgba(201,137,42,0.06)';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(0,scanY);ctx.lineTo(W,scanY);ctx.stroke();
   streams.forEach(s=>{
     s.y-=s.speed;
     if(s.y+s.len<0){s.y=H+s.len;s.x=Math.random()*W;}
     const g=ctx.createLinearGradient(s.x,s.y,s.x,s.y+s.len);
-    if(s.gold){
-      g.addColorStop(0,'rgba(201,137,42,0)');
-      g.addColorStop(0.3,'rgba(232,169,74,'+s.op+')');
-      g.addColorStop(0.7,'rgba(201,137,42,'+s.op+')');
-      g.addColorStop(1,'rgba(201,137,42,0)');
-    } else {
-      g.addColorStop(0,'rgba(60,60,60,0)');
-      g.addColorStop(0.4,'rgba(160,160,160,'+s.op+')');
-      g.addColorStop(0.8,'rgba(201,137,42,'+(s.op*0.4)+')');
-      g.addColorStop(1,'rgba(60,60,60,0)');
-    }
+    if(s.gold){g.addColorStop(0,'rgba(201,137,42,0)');g.addColorStop(0.3,'rgba(232,169,74,'+s.op+')');g.addColorStop(0.7,'rgba(201,137,42,'+s.op+')');g.addColorStop(1,'rgba(201,137,42,0)');}
+    else{g.addColorStop(0,'rgba(60,60,60,0)');g.addColorStop(0.4,'rgba(160,160,160,'+s.op+')');g.addColorStop(0.8,'rgba(201,137,42,'+(s.op*0.4)+')');g.addColorStop(1,'rgba(60,60,60,0)');}
     ctx.strokeStyle=g;ctx.lineWidth=s.w;
     ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x,s.y+s.len);ctx.stroke();
   });
@@ -341,7 +462,6 @@ function draw(){
   });
   requestAnimationFrame(draw);
 }
-
 resize();init();
 window.addEventListener('resize',()=>{resize();init();});
 requestAnimationFrame(draw);

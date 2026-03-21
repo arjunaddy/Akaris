@@ -4,28 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akaris - Bespoke Lifestyle Collections</title>
-<meta name="description" content="Akaris creates handcrafted, custom-designed lifestyle pieces for spaces that refuse the ordinary. Based in Hyderabad, India.">
+<meta name="description" content="Akaris creates handcrafted, custom-designed lifestyle pieces for spaces that refuse the ordinary.">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --black:#0a0a0a;--dark:#111;--grey:#1e1e1e;--grey-mid:#2a2a2a;
   --grey-text:#777;--white:#f0ede8;--white-dim:#909090;
   --gold:#c9892a;--gold-light:#e8a94a;
-  --max-w:1140px;--pad-x:clamp(1.5rem,5vw,3rem)
+  --max-w:1400px;--pad-x:clamp(1.5rem,4vw,5rem)
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:Georgia,serif;line-height:1.7;overflow-x:hidden}
 canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .site{position:relative;z-index:1}
+
+/* AKARIS LOGO GLOW */
+.ak{
+  font-family:Georgia,serif;
+  color:var(--gold);
+  text-shadow:0 0 12px rgba(201,137,42,0.7),0 0 24px rgba(201,137,42,0.35),0 0 48px rgba(201,137,42,0.15);
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  font-weight:400;
+  display:inline-block;
+}
+.ak-anim{
+  display:inline-block;
+  animation:akglow 3s ease-in-out infinite;
+}
+@keyframes akglow{
+  0%,100%{text-shadow:0 0 10px rgba(201,137,42,0.6),0 0 20px rgba(201,137,42,0.3),0 0 40px rgba(201,137,42,0.12)}
+  50%{text-shadow:0 0 18px rgba(232,169,74,0.95),0 0 36px rgba(201,137,42,0.6),0 0 72px rgba(201,137,42,0.3),0 0 120px rgba(201,137,42,0.1)}
+}
+
 nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;background:rgba(10,10,10,0.93);z-index:100;backdrop-filter:blur(10px)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:1.1rem var(--pad-x);display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.2rem;font-weight:400;letter-spacing:0.4em;color:var(--gold);text-transform:uppercase;text-decoration:none;font-family:Georgia,serif}
-.logo-sub{color:var(--grey-text);font-size:0.55rem;letter-spacing:0.2em;display:block;margin-top:2px;font-family:Arial,sans-serif;text-transform:uppercase}
+.logo{text-decoration:none;line-height:1}
+.logo .ak{font-size:1.2rem;animation:akglow 3s ease-in-out infinite}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--grey-text);text-decoration:none;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;font-family:Arial,sans-serif;transition:color 0.2s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
 .nav-links a:hover{color:var(--gold)}
 .nav-links a:hover::after{width:100%}
+
 .hero{padding:clamp(5rem,12vw,9rem) var(--pad-x) clamp(4rem,8vw,7rem);max-width:var(--max-w);margin:0 auto;text-align:center}
 .hero-tag{display:inline-block;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.3);padding:6px 18px;margin-bottom:2.5rem;font-family:Arial,sans-serif}
 .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:400;line-height:1.05;color:var(--white);margin-bottom:1.5rem;letter-spacing:-0.02em}
@@ -36,12 +57,14 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .btn:hover{background:var(--gold-light)}
 .btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .btn-ghost:hover{background:var(--gold);color:#0a0a0a}
+
 .section-wrap{border-top:1px solid rgba(201,137,42,0.08);padding:clamp(4rem,8vw,6rem) 0}
 .section-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
 .section-header{text-align:center;margin-bottom:3.5rem}
 .s-label{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-family:Arial,sans-serif;display:block;opacity:0.8}
 .s-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:400;color:var(--white);margin-bottom:0.75rem}
 .s-sub{color:var(--white-dim);font-size:0.87rem;font-family:Arial,sans-serif;line-height:1.85;max-width:54ch;margin:0 auto}
+
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,137,42,0.06)}
 .card{background:var(--dark);overflow:hidden;transition:background 0.3s;position:relative}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;z-index:2}
@@ -56,7 +79,8 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
 .tag{font-size:0.57rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.2);padding:2px 7px;font-family:Arial,sans-serif;opacity:0.8}
 .card-custom{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.5rem;text-align:center;background:#0d0d0d;min-height:340px;border:1px solid rgba(201,137,42,0.08)}
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(3rem,6vw,6rem);align-items:center}
+
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(3rem,6vw,7rem);align-items:center}
 .about-eyebrow{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-family:Arial,sans-serif;display:block;opacity:0.8}
 .about-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--white);line-height:1.2;margin-bottom:1.5rem}
 .gold-bar{width:40px;height:2px;background:var(--gold);margin-bottom:2rem}
@@ -64,19 +88,22 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .stat{border:1px solid rgba(201,137,42,0.12);padding:1.25rem 1rem;text-align:center}
 .stat-n{font-size:1.8rem;color:var(--gold);font-family:Georgia,serif;display:block}
 .stat-l{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-text);margin-top:0.3rem;font-family:Arial,sans-serif;display:block}
-.about-right{font-family:Arial,sans-serif;font-size:0.87rem;color:var(--white-dim);line-height:1.9}
-.about-right p{margin-bottom:1.25rem}
+.about-right{font-family:Arial,sans-serif;font-size:0.9rem;color:var(--white-dim);line-height:2}
+.about-right p{margin-bottom:1.5rem}
 .about-right p:last-child{margin-bottom:0}
+.about-right .pull{font-family:Georgia,serif;font-size:1.05rem;color:var(--white);font-style:italic;line-height:1.7;border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0}
+
 .contact-section{text-align:center}
 .contact-cards{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
 .contact-a{display:flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border:1px solid rgba(201,137,42,0.2);color:var(--white);text-decoration:none;font-size:0.8rem;font-family:Arial,sans-serif;transition:all 0.2s}
 .contact-a:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,137,42,0.04)}
 .contact-a svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0}
+
 footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.footer-logo{font-size:1rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-family:Georgia,serif}
 .footer-copy{font-size:0.7rem;color:#3a3a3a;font-family:Arial,sans-serif;text-align:right}
 .footer-copy span{display:block;color:rgba(201,137,42,0.25);font-size:0.58rem;letter-spacing:0.15em;margin-top:3px}
+
 @media(max-width:900px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about-grid{grid-template-columns:1fr}
@@ -98,7 +125,7 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#">Akaris<span class="logo-sub">Hyderabad · India</span></a>
+    <a class="logo" href="#"><span class="ak ak-anim">Akaris</span></a>
     <ul class="nav-links">
       <li><a href="#collections">Collections</a></li>
       <li><a href="#about">About</a></li>
@@ -191,7 +218,7 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
   <div class="section-inner">
     <div class="about-grid">
       <div>
-        <span class="about-eyebrow">About Akaris</span>
+        <span class="about-eyebrow">About <span class="ak" style="font-size:inherit;letter-spacing:0.25em;animation:akglow 3s ease-in-out infinite">Akaris</span></span>
         <h2 class="about-title">Made for those who<br>refuse the ordinary</h2>
         <div class="gold-bar"></div>
         <div class="stat-row">
@@ -201,9 +228,10 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
         </div>
       </div>
       <div class="about-right">
-        <p>Akaris was born from a simple belief: that the objects around you should be as distinctive as you are. Every shelf, every wall, every desk corner is an opportunity to say something.</p>
-        <p>We work directly with clients — cafés, homes, businesses, creators — to design and produce pieces that belong nowhere else. There is no warehouse, no catalogue, no run of thousands. Only pieces made with intent.</p>
-        <p>Based in Hyderabad, we serve clients across India. Whether you have a precise brief or just a vague feeling, we will help you find the form.</p>
+        <p>Some things cannot be found. They have to be made — for a specific wall, a specific room, a specific person who knows exactly what they want but has never seen it exist yet.</p>
+        <p class="pull">"Every piece we create lives in exactly one place in the world. The place it was made for."</p>
+        <p>We work directly with clients — cafés, collectors, creators, businesses — to bring singular objects into existence. The process is deliberate. The result is permanent.</p>
+        <p>Bring us a feeling, a reference, or a fully formed brief. We will find the form.</p>
       </div>
     </div>
   </div>
@@ -231,8 +259,8 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Akaris</div>
-    <div class="footer-copy">&copy; 2026 Akaris &nbsp;&middot;&nbsp; Hyderabad, India<span>akaris.in</span></div>
+    <span class="ak ak-anim" style="font-size:1rem">Akaris</span>
+    <div class="footer-copy">&copy; 2026 <span class="ak" style="font-size:inherit;letter-spacing:0.15em;font-size:0.7rem">Akaris</span><span>akaris.in</span></div>
   </div>
 </footer>
 </div>

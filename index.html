@@ -23,15 +23,12 @@ html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:Georgia,serif;line-height:1.7;overflow-x:hidden}
 canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .site{position:relative;z-index:1}
-
 .ak{font-family:Georgia,serif;color:var(--gold);text-shadow:0 0 12px rgba(201,137,42,0.7),0 0 24px rgba(201,137,42,0.35);letter-spacing:0.4em;text-transform:uppercase;font-weight:400;display:inline-block}
 .ak-anim{animation:akglow 3s ease-in-out infinite}
 @keyframes akglow{
   0%,100%{text-shadow:0 0 10px rgba(201,137,42,0.6),0 0 20px rgba(201,137,42,0.3),0 0 40px rgba(201,137,42,0.12)}
   50%{text-shadow:0 0 18px rgba(232,169,74,0.95),0 0 36px rgba(201,137,42,0.6),0 0 72px rgba(201,137,42,0.3),0 0 120px rgba(201,137,42,0.1)}
 }
-
-/* NAV */
 nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;background:rgba(10,10,10,0.93);z-index:100;backdrop-filter:blur(10px)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:1.1rem var(--pad-x);display:flex;justify-content:space-between;align-items:center}
 .logo{text-decoration:none;line-height:1}
@@ -50,8 +47,6 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .mobile-menu.open{display:flex}
 .mobile-menu a{color:var(--white-dim);text-decoration:none;font-size:1.2rem;letter-spacing:0.2em;text-transform:uppercase;font-family:Arial,sans-serif;transition:color 0.2s}
 .mobile-menu a:hover{color:var(--gold)}
-
-/* HERO */
 .hero{padding:clamp(5rem,12vw,9rem) var(--pad-x) clamp(4rem,8vw,7rem);max-width:var(--max-w);margin:0 auto;text-align:center}
 .hero-tag{display:inline-block;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.3);padding:6px 18px;margin-bottom:2.5rem;font-family:Arial,sans-serif}
 .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:400;line-height:1.05;color:var(--white);margin-bottom:1.5rem;letter-spacing:-0.02em}
@@ -62,45 +57,45 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .btn:hover{background:var(--gold-light)}
 .btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .btn-ghost:hover{background:var(--gold);color:#0a0a0a}
-
-/* SECTIONS */
 .section-wrap{border-top:1px solid rgba(201,137,42,0.08);padding:clamp(4rem,8vw,6rem) 0}
 .section-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
 .section-header{text-align:center;margin-bottom:3rem}
 .s-label{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-family:Arial,sans-serif;display:block;opacity:0.8}
 .s-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:400;color:var(--white);margin-bottom:0.75rem}
 .s-sub{color:var(--white-dim);font-size:0.87rem;font-family:Arial,sans-serif;line-height:1.85;max-width:54ch;margin:0 auto}
-
-/* HOW IT WORKS — STAGGERED */
-.how-stagger{display:flex;flex-direction:column;gap:0;margin-top:2rem;position:relative}
-.how-stagger::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(201,137,42,0.12);transform:translateX(-50%)}
-.how-step{display:grid;grid-template-columns:1fr 80px 1fr;align-items:center;gap:0;opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;padding:2rem 0}
+.how-stagger{position:relative;margin-top:2rem}
+.how-stagger::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(201,137,42,0.12);transform:translateX(-50%);display:block}
+.how-step{display:grid;grid-template-columns:1fr 80px 1fr;align-items:center;padding:2.5rem 0;opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .how-step.visible{opacity:1;transform:translateY(0)}
-.how-step:nth-child(odd) .how-content{grid-column:1;text-align:right;padding-right:3rem}
-.how-step:nth-child(odd) .how-spacer{grid-column:3}
-.how-step:nth-child(even) .how-content{grid-column:3;text-align:left;padding-left:3rem;grid-row:1}
-.how-step:nth-child(even) .how-center{grid-column:2;grid-row:1}
+.how-step:nth-child(1){transition-delay:0s}
+.how-step:nth-child(2){transition-delay:0.15s}
+.how-step:nth-child(3){transition-delay:0.3s}
+.how-step:nth-child(odd) .how-content{grid-column:1;grid-row:1;text-align:right;padding-right:3rem}
+.how-step:nth-child(odd) .how-center{grid-column:2;grid-row:1}
+.how-step:nth-child(odd) .how-spacer{grid-column:3;grid-row:1}
 .how-step:nth-child(even) .how-spacer{grid-column:1;grid-row:1}
-.how-center{grid-column:2;display:flex;flex-direction:column;align-items:center;gap:0.5rem;position:relative;z-index:2}
-.how-icon-wrap{width:56px;height:56px;border:1px solid rgba(201,137,42,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--black);transition:border-color 0.3s,background 0.3s}
+.how-step:nth-child(even) .how-center{grid-column:2;grid-row:1}
+.how-step:nth-child(even) .how-content{grid-column:3;grid-row:1;text-align:left;padding-left:3rem}
+.how-center{display:flex;flex-direction:column;align-items:center;gap:0.5rem;position:relative;z-index:2}
+.how-icon-wrap{width:56px;height:56px;border:1px solid rgba(201,137,42,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--black);transition:border-color 0.3s,background 0.3s;flex-shrink:0}
 .how-step.visible .how-icon-wrap{border-color:var(--gold);background:#111}
 .how-icon-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5}
 .how-num-badge{font-size:0.58rem;letter-spacing:0.2em;color:var(--gold);font-family:Arial,sans-serif;opacity:0.6}
-.how-connector{width:1px;height:40px;background:rgba(201,137,42,0.2)}
-.how-content{}
 .how-title{font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.5rem;letter-spacing:0.03em}
-.how-desc{font-size:0.8rem;color:var(--grey-text);font-family:Arial,sans-serif;line-height:1.75;max-width:32ch;display:inline-block}
+.how-desc{font-size:0.8rem;color:var(--grey-text);font-family:Arial,sans-serif;line-height:1.75;max-width:30ch;display:inline-block}
 .how-step:nth-child(odd) .how-desc{text-align:right}
 .how-step:nth-child(even) .how-desc{text-align:left}
-
-/* COLLECTIONS */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,137,42,0.06)}
 .card{background:var(--dark);overflow:hidden;transition:background 0.3s;position:relative}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;z-index:2}
 .card:hover::before{transform:scaleX(1)}
 .card:hover{background:#141414}
-.card-img{width:100%;height:210px;object-fit:cover;display:block;filter:brightness(0.75) saturate(0.45);transition:filter 0.4s}
-.card:hover .card-img{filter:brightness(0.9) saturate(0.7)}
+.card-img-wrap{position:relative;width:100%;height:220px;overflow:hidden}
+.card-img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.5s ease,filter 0.4s ease}
+.card-img-primary{opacity:1;filter:brightness(0.75) saturate(0.45);z-index:1}
+.card-img-hover{opacity:0;filter:brightness(0.85) saturate(0.6);z-index:2}
+.card:hover .card-img-primary{opacity:0}
+.card:hover .card-img-hover{opacity:1}
 .card-body{padding:1.5rem}
 .card-num{font-size:0.56rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:0.6rem;font-family:Arial,sans-serif;opacity:0.6}
 .card-title{font-size:0.92rem;font-weight:400;color:var(--white);margin-bottom:0.5rem}
@@ -108,8 +103,6 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
 .tag{font-size:0.57rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,137,42,0.2);padding:2px 7px;font-family:Arial,sans-serif;opacity:0.8}
 .card-custom{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.5rem;text-align:center;background:#0d0d0d;min-height:340px;border:1px solid rgba(201,137,42,0.08)}
-
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(3rem,6vw,7rem);align-items:center}
 .about-eyebrow{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-family:Arial,sans-serif;display:block;opacity:0.8}
 .about-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--white);line-height:1.2;margin-bottom:1.5rem}
@@ -122,8 +115,6 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .about-right p{margin-bottom:1.5rem}
 .about-right p:last-child{margin-bottom:0}
 .about-right .pull{font-family:Georgia,serif;font-size:1.05rem;color:var(--white);font-style:italic;line-height:1.7;border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0}
-
-/* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;text-align:left}
 .contact-info h3{font-size:1rem;font-weight:400;color:var(--white);margin-bottom:1rem}
 .contact-info p{font-size:0.85rem;color:var(--white-dim);font-family:Arial,sans-serif;line-height:1.8;margin-bottom:1.5rem}
@@ -142,39 +133,31 @@ nav{border-bottom:1px solid rgba(201,137,42,0.12);position:sticky;top:0;backgrou
 .form-submit{padding:0.85rem 2rem;background:var(--gold);color:#0a0a0a;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border:none;cursor:pointer;font-family:Arial,sans-serif;font-weight:700;transition:background 0.2s;align-self:flex-start}
 .form-submit:hover{background:var(--gold-light)}
 .form-success{display:none;padding:1rem;border:1px solid rgba(201,137,42,0.3);color:var(--gold);font-size:0.82rem;font-family:Arial,sans-serif;text-align:center;letter-spacing:0.05em}
-
-/* FOOTER */
 footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
 .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .footer-copy{font-size:0.7rem;color:#3a3a3a;font-family:Arial,sans-serif;text-align:right}
 .footer-copy span{display:block;color:rgba(201,137,42,0.25);font-size:0.58rem;letter-spacing:0.15em;margin-top:3px}
-
-/* WHATSAPP FLOAT — green outline, gold fill */
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;border:2px solid var(--green);box-shadow:0 0 0 0 rgba(37,211,102,0.4);animation:wapulse 2.5s ease-in-out infinite}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;border:2px solid var(--green);animation:wapulse 2.5s ease-in-out infinite}
 .wa-float svg{width:24px;height:24px;fill:none;stroke:#0a0a0a;stroke-width:2;flex-shrink:0}
 .wa-float:hover{background:var(--gold-light)}
 @keyframes wapulse{
   0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}
   50%{box-shadow:0 0 0 10px rgba(37,211,102,0)}
 }
-
-/* SCROLL FADE IN */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about-grid{grid-template-columns:1fr}
   .contact-wrap{grid-template-columns:1fr}
-  .how-stagger::before{left:28px}
-  .how-step{grid-template-columns:56px 1fr;grid-template-rows:auto}
-  .how-step:nth-child(odd) .how-content,.how-step:nth-child(even) .how-content{grid-column:2;grid-row:1;text-align:left;padding-left:1.5rem;padding-right:0}
-  .how-step:nth-child(odd) .how-desc,.how-step:nth-child(even) .how-desc{text-align:left}
-  .how-center{grid-column:1;grid-row:1;align-self:start;padding-top:0.25rem}
-  .how-connector{display:none}
-  .how-spacer{display:none}
-  .how-step:nth-child(even) .how-spacer{display:none}
+  .how-stagger::before{display:none}
+  .how-step{grid-template-columns:64px 1fr;grid-template-rows:auto;padding:1.5rem 0;gap:0}
+  .how-step:nth-child(odd) .how-center,.how-step:nth-child(even) .how-center{grid-column:1;grid-row:1;align-self:flex-start;padding-top:0.1rem}
+  .how-step:nth-child(odd) .how-content,.how-step:nth-child(even) .how-content{grid-column:2;grid-row:1;text-align:left;padding-left:1.25rem;padding-right:0}
+  .how-step:nth-child(odd) .how-desc,.how-step:nth-child(even) .how-desc{text-align:left;max-width:100%}
+  .how-step:nth-child(odd) .how-spacer,.how-step:nth-child(even) .how-spacer{display:none}
+  .how-stagger{border-left:1px solid rgba(201,137,42,0.15);padding-left:0;margin-left:28px}
+  .how-center{margin-left:-28px;flex-direction:row;gap:0.75rem;align-items:center}
 }
 @media(max-width:600px){
   .nav-links{display:none}
@@ -185,6 +168,10 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
   .footer-copy{text-align:center}
   .form-row{grid-template-columns:1fr}
   .stat-row{grid-template-columns:repeat(3,1fr)}
+  .how-stagger{margin-left:20px}
+  .how-center{margin-left:-20px}
+  .how-icon-wrap{width:44px;height:44px;flex-shrink:0}
+  .how-icon-wrap svg{width:18px;height:18px}
 }
 </style>
 </head>
@@ -233,7 +220,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
       <p class="s-sub">Three steps from idea to object. No guesswork, no surprises.</p>
     </div>
     <div class="how-stagger">
-
       <div class="how-step">
         <div class="how-content">
           <h3 class="how-title">Consult</h3>
@@ -247,7 +233,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
         </div>
         <div class="how-spacer"></div>
       </div>
-
       <div class="how-step">
         <div class="how-spacer"></div>
         <div class="how-center">
@@ -258,14 +243,13 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
         </div>
         <div class="how-content">
           <h3 class="how-title">Design</h3>
-          <p class="how-desc">We develop the design with you, iterating until it's exactly right. You see it before it exists. Nothing goes to production without your approval.</p>
+          <p class="how-desc">We develop the design with you, iterating until it's exactly right. Nothing goes to production without your approval.</p>
         </div>
       </div>
-
       <div class="how-step">
         <div class="how-content">
           <h3 class="how-title">Deliver</h3>
-          <p class="how-desc">Your piece is crafted with precision and delivered ready to display. Built once, built right — a singular object that belongs to your space alone.</p>
+          <p class="how-desc">Your piece is crafted with precision and delivered ready to display. Built once, built right — singular and permanent.</p>
         </div>
         <div class="how-center">
           <div class="how-icon-wrap">
@@ -275,7 +259,6 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
         </div>
         <div class="how-spacer"></div>
       </div>
-
     </div>
   </div>
 </div>
@@ -285,60 +268,98 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
     <div class="section-header fade-in">
       <span class="s-label">Collections</span>
       <h2 class="s-title">Curated for the unconventional</h2>
-      <p class="s-sub">Five distinct collections rooted in culture. Every piece made-to-order, never off the shelf.</p>
+      <p class="s-sub">Six distinct collections rooted in culture. Every piece made-to-order, never off the shelf.</p>
     </div>
     <div class="grid">
+
       <div class="card">
-        <img class="card-img" src="/img6.jpg" alt="Sci-fi wall art" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p1.jpg" alt="Sci-fi fighter lamp" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/h1.jpg" alt="Darth Vader wall art" onerror="this.style.display='none'">
+        </div>
         <div class="card-body">
           <p class="card-num">Collection 01</p>
           <h3 class="card-title">Sci-fi &amp; fantasy</h3>
-          <p class="card-desc">Wall art and display pieces from iconic universes. Custom figures built around your fandom.</p>
-          <div class="tags"><span class="tag">Star Wars</span><span class="tag">Wall art</span><span class="tag">Figures</span></div>
+          <p class="card-desc">Wall art and display pieces from iconic universes. Custom figures and lamps built around your fandom.</p>
+          <div class="tags"><span class="tag">Star Wars</span><span class="tag">Wall art</span><span class="tag">Sci-fi lamps</span></div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="/img5.jpg" alt="Comic universe" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p2.jpg" alt="X-Wing wall display" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/p2.jpg" alt="X-Wing wall display" onerror="this.style.display='none'">
+        </div>
         <div class="card-body">
           <p class="card-num">Collection 02</p>
           <h3 class="card-title">Comic universe</h3>
-          <p class="card-desc">Marvel and DC themed wall masks, café accessories and QR card displays.</p>
+          <p class="card-desc">Marvel and DC themed wall pieces, café accessories, tissue covers and QR card displays.</p>
           <div class="tags"><span class="tag">Marvel</span><span class="tag">DC</span><span class="tag">Café décor</span></div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="/img3.jpg" alt="Ambient lighting" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p3.jpg" alt="Lotus flower lamp" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/p3.jpg" alt="Lotus flower lamp" onerror="this.style.display='none'">
+        </div>
         <div class="card-body">
           <p class="card-num">Collection 03</p>
           <h3 class="card-title">Ambient lighting</h3>
-          <p class="card-desc">Japanese-inspired lanterns, lattice lamps and glow pieces that transform any space.</p>
-          <div class="tags"><span class="tag">Lanterns</span><span class="tag">Desk lamps</span><span class="tag">Mood</span></div>
+          <p class="card-desc">Lotus lamps, organic pendants and sculptural glow pieces that transform the mood of any room.</p>
+          <div class="tags"><span class="tag">Lotus lamp</span><span class="tag">Pendants</span><span class="tag">Mood lighting</span></div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="/img4.jpg" alt="Moto culture" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p4.jpg" alt="Ferrari F1 wing display" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/p4.jpg" alt="Ferrari F1 wing display" onerror="this.style.display='none'">
+        </div>
         <div class="card-body">
           <p class="card-num">Collection 04</p>
           <h3 class="card-title">Moto culture</h3>
-          <p class="card-desc">Piston lamp bases, NOS cylinder tissue boxes and biker café statement décor.</p>
-          <div class="tags"><span class="tag">Biker café</span><span class="tag">Piston lamps</span><span class="tag">Helmet art</span></div>
+          <p class="card-desc">F1 wing displays, piston lamp bases, NOS cylinder tissue boxes and biker café statement décor.</p>
+          <div class="tags"><span class="tag">F1 display</span><span class="tag">Piston lamps</span><span class="tag">Biker café</span></div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="/img8.jpg" alt="Smart botanicals" onerror="this.style.display='none';this.parentElement.style.minHeight='210px';this.parentElement.style.background='#0d0d0d'">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p5.jpg" alt="Circular wall planter" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/h5.jpg" alt="Terrarium enclosure" onerror="this.style.display='none'">
+        </div>
         <div class="card-body">
           <p class="card-num">Collection 05</p>
           <h3 class="card-title">Smart botanicals</h3>
-          <p class="card-desc">Wall-mounted planters, sculptural pots and living art for indoor and outdoor spaces.</p>
-          <div class="tags"><span class="tag">Wall planters</span><span class="tag">Sculpted pots</span><span class="tag">Outdoor</span></div>
+          <p class="card-desc">Wall planters, terrariums, sculptural pots and living art for indoor and outdoor spaces.</p>
+          <div class="tags"><span class="tag">Wall planters</span><span class="tag">Terrariums</span><span class="tag">Outdoor</span></div>
         </div>
       </div>
-      <div class="card card-custom">
-        <p class="card-num" style="margin-bottom:1rem;opacity:1">Collection 06</p>
-        <h3 class="card-title" style="font-size:1rem;margin-bottom:0.75rem">Fully custom</h3>
-        <p class="card-desc" style="margin-bottom:1.5rem">Your vision, our craft. We sit with you, understand the brief and deliver something singular.</p>
-        <a class="btn" href="#contact" style="font-size:0.65rem;padding:0.7rem 1.5rem">Start a brief</a>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <img class="card-img-primary" src="/p6.jpg" alt="Wall mounted PC cabinet" onerror="this.parentElement.style.background='#0d0d0d';this.style.display='none'">
+          <img class="card-img-hover" src="/h6.jpg" alt="Desk organiser monitor stand" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <p class="card-num">Collection 06</p>
+          <h3 class="card-title">Tech &amp; workspace</h3>
+          <p class="card-desc">Wall-mounted PC cabinets, monitor stands, desk organisers and custom tech accessories for your setup.</p>
+          <div class="tags"><span class="tag">Wall PC</span><span class="tag">Desk setup</span><span class="tag">Tech décor</span></div>
+        </div>
       </div>
+
+      <div class="card card-custom" style="grid-column:1/-1;min-height:180px;flex-direction:row;gap:3rem;justify-content:center">
+        <div style="text-align:center">
+          <p class="card-num" style="margin-bottom:0.75rem;opacity:1">Collection 07</p>
+          <h3 class="card-title" style="font-size:1rem;margin-bottom:0.5rem">Fully custom</h3>
+          <p class="card-desc" style="margin-bottom:1.25rem;max-width:40ch;display:inline-block">Your vision, our craft. We sit with you, understand the brief and deliver something singular.</p>
+          <br>
+          <a class="btn" href="#contact" style="font-size:0.65rem;padding:0.7rem 1.5rem">Start a brief</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -351,7 +372,7 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
         <h2 class="about-title">Made for those who<br>refuse the ordinary</h2>
         <div class="gold-bar"></div>
         <div class="stat-row">
-          <div class="stat"><span class="stat-n">5</span><span class="stat-l">Collections</span></div>
+          <div class="stat"><span class="stat-n">6</span><span class="stat-l">Collections</span></div>
           <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Custom</span></div>
           <div class="stat"><span class="stat-n">1:1</span><span class="stat-l">Process</span></div>
         </div>
@@ -409,6 +430,7 @@ footer{border-top:1px solid rgba(201,137,42,0.1);padding:2rem var(--pad-x)}
               <option>Ambient lighting</option>
               <option>Moto culture</option>
               <option>Smart botanicals</option>
+              <option>Tech &amp; workspace</option>
               <option>Fully custom</option>
             </select>
           </div>
@@ -461,17 +483,12 @@ function submitForm(e){
     setTimeout(()=>{s.style.display='none';},5000);
   },1000);
 }
-
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(el=>{
-    if(el.isIntersecting){
-      el.target.classList.add('visible');
-      obs.unobserve(el.target);
-    }
+    if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}
   });
 },{threshold:0.15});
 document.querySelectorAll('.fade-in,.how-step').forEach(el=>obs.observe(el));
-
 const canvas=document.getElementById('bg');
 const ctx=canvas.getContext('2d');
 let W,H,streams=[],sparks=[],scanY=0;
